@@ -55,25 +55,25 @@ select * from bank.client where Age > (select avg(Age) from bank.client);
 Визначити найбільший та найменший кредити(має бути просто 2 числових значення).
 
 Решение:
-Задание 1
+1
 select FirstName, Passport from bank.Client group by FirstName;
 
-Задание 2
+2
 select * from bank.Client
 join bank.Application
 on Client.idClient = Application.Client_idClient
 where Sum > 5000;
 
-Задание 3
+3
 select count(DepartmentCity) as All_Departments from bank.Department;
 select count(DepartmentCity) as Lviv_Departments from bank.Department where DepartmentCity = 'Lviv';
 
-Задание 4
+4
 select max(Sum) from bank.Application
 join bank.Client
 on Client.idClient = Application.Client_idClient
 group by Client.idClient;
 
-Задание 5
+5
 select max(Sum) from bank.Application;
 select min(Sum) from bank.Application;
